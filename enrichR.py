@@ -1,5 +1,4 @@
-#!/storage/breva/complgen/bin/anaconda/bin/python2.7
-# Script to perform EnrichR enrichment analysis
+# Script to perform EnrichR enrichment analysis (http://amp.pharm.mssm.edu/Enrichr/)
 # Based on code available on enrichR website, 
 # adapted by wdecoster
 
