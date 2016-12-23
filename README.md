@@ -1,7 +1,5 @@
 # enrichr_cli
-Python script to use enrichr from command line (http://amp.pharm.mssm.edu/Enrichr/)
-
-Python script to query enrichr from command line.
+Python script to query enrichr from command line (http://amp.pharm.mssm.edu/Enrichr/)
 
 ###Required python libraries:
 * json
