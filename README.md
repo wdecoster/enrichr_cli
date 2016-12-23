@@ -4,7 +4,10 @@ Python script to use enrichr from command line (http://amp.pharm.mssm.edu/Enrich
 Python script to query enrichr from command line.
 
 ###Required python libraries:
-  -json, requests, sys, os
+* json
+* requests
+* sys
+* os
 
 ###Input
 Input is a newline-separated list of gene symbols, either from a file or on stdin.
@@ -16,7 +19,7 @@ Input is a newline-separated list of gene symbols, either from a file or on stdi
   * cat genelist.txt | python enrichR.py -                                [reading from a pipe]
 
 ###Output:
-  -Per used database a file will be created containing the enrichment results.
+Per used database a file will be created containing the enrichment results.
 
 ###Databases
 To get a list of all available databases:
