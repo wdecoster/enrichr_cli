@@ -1,5 +1,5 @@
-# Script to perform EnrichR enrichment analysis (http://amp.pharm.mssm.edu/Enrichr/)
-# Based on code available on enrichR website, 
+# Script to perform Enrichr enrichment analysis (http://amp.pharm.mssm.edu/Enrichr/)
+# Based on code available on enrichr website, 
 # adapted by wdecoster
 
 import json, requests, sys, os
