@@ -1,25 +1,25 @@
 # enrichr_cli
 Python script to query enrichr from command line (http://amp.pharm.mssm.edu/Enrichr/)
 
-###Required python libraries:
+### Required python libraries:
 * json
 * requests
 * sys
 * os
 
-###Input
+### Input
 Input is a newline-separated list of gene symbols, either from a file or on stdin.
 
-###Usage
+### Usage
   * python enrichR.py genelist.txt                                        [using default databases, see further]
   * python enrichR.py genelist GO_Molecular_Function_2015                 [using just one database]
   * python enrichR.py genelist GO_Molecular_Function_2015 Reactome_2016   [using just two databases]
   * cat genelist.txt | python enrichR.py -                                [reading from a pipe]
 
-###Output:
+### Output:
 Per used database a file will be created containing the enrichment results.
 
-###Databases
+### Databases
 To get a list of all available databases:
   python enrichR.py databases
 
@@ -34,7 +34,7 @@ Default databases, used without specifying a database:
   * MSigDB_Computational
   * Panther_2016
 
-#####Notes
+##### Notes
 * The databases are hardcoded in the script and as such will not follow updates from Enrichr automatically.
 * If you specify a database which is not available you will receive a warning. 
 * If not a single valid database is specified the default set will be used.
