@@ -43,6 +43,7 @@ def getArgs():
 		sys.exit("Input Error: Required argument is -g/--genes containing list of genes to use for enrichment.")
 	return args
 
+
 def senddata(genes):
 	'''
 	Send the input gene list to enrichr, return query
@@ -60,11 +61,11 @@ def senddata(genes):
 	return(queryId)
 
 
-def askgenelist(id, inlist):
+def askgenelist(enrichr_id, inlist):
 	'''
 	Compare the genes send and received to get succesfully recognized genes
 	'''
-	response = requests.get('http://amp.pharm.mssm.edu/Enrichr/view?userListId=%s' % id)
+	response = requests.get('http://amp.pharm.mssm.edu/Enrichr/view?userListId=%s' % enrichr_id)
 	if not response.ok:
 		raise Exception('Error getting gene list back')
 	returnedL = json.loads(response.text)["genes"]
@@ -115,13 +116,13 @@ def procesinput():
 	return genes
 
 
-def getresults(id, gene_set_library):
+def getresults(enrichr_id, gene_set_library):
 	'''
 	Receive the enrichment for the chosen databases
 	write to files with default names
 	'''
 	filename = gene_set_library + '_enrichment'
-	url = 'http://amp.pharm.mssm.edu/Enrichr/export?userListId=%s&filename=%s&backgroundType=%s' % (id, filename, gene_set_library)
+	url = 'http://amp.pharm.mssm.edu/Enrichr/export?userListId=%s&filename=%s&backgroundType=%s' % (enrichr_id, filename, gene_set_library)
 	response = requests.get(url, stream=True)
 	with open(os.path.join(args.outdir, args.prefix + filename + '.txt'), 'wb') as output:
 		for chunk in response.iter_content(chunk_size=1024):
